@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pass.in</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
     <script src="./main.js" defer></script>
     <!-- bibliotecas de hora do js - dayjs -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
@@ -18,32 +20,49 @@
 </head>
 <body>
 
+    <div class="container">
+        <header>
+            <img src="./logo.svg" alt="pass.in">
+        </header>
 
-    <form onsubmit="adicionarParticipante(event)">
-        <fieldset>
-            <legend>Inscrição</legend>
+        <form onsubmit="adicionarParticipante(event)">
+            <fieldset>
+                <legend>Inscrição</legend>
 
+                <div>
+                    <div class="input-wrapper">
+                        <img src="./icon-nome.svg" alt="desenho logo nome">
+                        <input type="text" placeholder="Nome completo" name="nome" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <img src="./icon-email.svg" alt="desenho logo e-mail">
+                        <input type="email" placeholder="E-mail" name="email" required>
+                    </div>
+                    <button>REALIZAR INSCRIÇÃO</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <section class="lista-participantes">
+            <h2>Participantes</h2>
             <div>
-                <input type="text" placeholder="Nome completo" name="nome" required>
-                <input type="email" placeholder="E-mail" name="email" required>
-                <button>REALIZAR INSCRIÇÃO</button>
+                <table width="100%">
+                    <thead style="text-align: left;"> 
+                        <tr>
+                            <th>Participantes</th>
+                            <th>Data da inscrição</th>
+                            <th>Data do check-in</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <!-- está sendo aplicada no javascript -->
+                    </tbody>
+                </table>
             </div>
-        </fieldset>
-    </form>
+        </section>
 
-    <table width="100%">
-        <thead style="text-align: left;"> 
-            <tr>
-                <th>Participantes</th>
-                <th>Data da inscrição</th>
-                <th>Data do check-in</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <!-- está sendo aplicada no javascript -->
-        </tbody>
-    </table>
+    </div>
 
 </body>
 </html>
